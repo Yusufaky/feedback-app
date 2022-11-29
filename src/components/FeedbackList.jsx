@@ -23,5 +23,4 @@ FeedbackList.propTypes = {
     })
   ),
 };
-
 export default FeedbackList;
