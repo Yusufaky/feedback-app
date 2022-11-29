@@ -1,4 +1,4 @@
-import FeadbackItem from "./FeadbackItem";
+import FeedbackItem from "./FeedbackItem";
 function FeedbackList({ feedback }) {
   if (!feedback && feedback.length === 0) {
     return <p>No feedback yet</p>;
@@ -6,7 +6,7 @@ function FeedbackList({ feedback }) {
   return (
     <div className="feedback-list">
       {feedback.map((item) => (
-        <FeadbackItem key={item.id} item={item} />
+        <FeedbackItem key={item.id} item={item} />
       ))}
     </div>
   );

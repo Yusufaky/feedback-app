@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
-import FeadbackData from "./data/FeadBackData";
+import FeedbackData from "./data/FeedBackData";
 function App() {
-  const [feedback, setFeedback] = useState(FeadbackData);
+  const [feedback, setFeedback] = useState(FeedbackData);
   return (
     <>
       <Header />
