@@ -1,5 +1,5 @@
 import { useState } from "react";
-function RatingSelect(select) {
+function RatingSelect({ select }) {
   const [selected, setSelected] = useState(10);
 
   const handleChange = (e) => {
