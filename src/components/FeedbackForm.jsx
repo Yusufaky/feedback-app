@@ -1,10 +1,12 @@
 import Card from "./shared/Card";
+import Button from "./shared/Button";
 import { useState } from "react";
 function FeebackForm() {
   const [text, setText] = useState("");
   const handleTextChange = (e) => {
     setText(e.target.value);
   };
+
   return (
     <Card>
       <form>
@@ -16,7 +18,7 @@ function FeebackForm() {
             placeholder="Write a review"
             value={text}
           />
-          <button type="submit">Sent</button>
+          <Button type="submit">Sent</Button>
         </div>
       </form>
     </Card>
