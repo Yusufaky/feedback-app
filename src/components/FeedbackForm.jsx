@@ -3,7 +3,19 @@ import Button from "./shared/Button";
 import { useState } from "react";
 function FeebackForm() {
   const [text, setText] = useState("");
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  const [message, setMessage] = useState("");
   const handleTextChange = (e) => {
+    if (text === "") {
+      setBtnDisabled(true);
+      setMessage(null);
+    } else if (text !== "" && text.trim().length <= 10) {
+      setBtnDisabled(true);
+      setMessage("Please enter at least 10 characters");
+    } else {
+      setBtnDisabled(false);
+      setMessage(null);
+    }
     setText(e.target.value);
   };
 
@@ -18,8 +30,11 @@ function FeebackForm() {
             placeholder="Write a review"
             value={text}
           />
-          <Button type="submit">Sent</Button>
+          <Button type="submit" isDisabled={btnDisabled}>
+            Sent
+          </Button>
         </div>
+        {message && <div className="message">{message}</div>}
       </form>
     </Card>
   );
