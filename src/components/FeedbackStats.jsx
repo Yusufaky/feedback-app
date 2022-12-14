@@ -1,5 +1,7 @@
-import PropTypes from "prop-types";
-function FeedbackStats({ feedback }) {
+import { useContext } from "react";
+import FeedbackContext from "../context/FeedbackContext";
+function FeedbackStats({}) {
+  const { feedback } = useContext(FeedbackContext);
   let media =
     feedback.reduce((acc, item) => acc + item.rating, 0) / feedback.length;
 
@@ -13,7 +15,4 @@ function FeedbackStats({ feedback }) {
   );
 }
 
-FeedbackStats.propTypes = {
-  feedback: PropTypes.array.isRequired,
-};
 export default FeedbackStats;
